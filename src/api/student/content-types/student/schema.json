@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "roll_number": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "device_id": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "student"
+    },
+    "faceEmbedding": {
+      "type": "json"
+    },
+    "isFaceRegistered": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
